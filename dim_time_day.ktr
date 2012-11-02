@@ -1,0 +1,1360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>dim_time_day</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_status>0</trans_status>
+    <directory>&#47;DM</directory>
+    <parameters>
+    </parameters>
+    <log>
+      <read/>
+      <write/>
+      <input/>
+      <output/>
+      <update/>
+      <rejected/>
+      <connection/>
+      <table/>
+      <step_performance_table/>
+      <use_batchid>Y</use_batchid>
+      <use_logfield>N</use_logfield>
+      <size_limit_lines/>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>1000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>5000</feedback_size>
+    <using_thread_priorities>N</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <modified_user>admin</modified_user>
+  <modified_date>2010&#47;03&#47;27 12:31:23.000</modified_date>
+  </info>
+  <notepads>
+    <notepad>
+      <note>Prepare</note>
+      <xloc>26</xloc>
+      <yloc>37</yloc>
+      <width>60</width>
+      <heigth>25</heigth>
+    </notepad>
+    <notepad>
+      <note>Input</note>
+      <xloc>26</xloc>
+      <yloc>122</yloc>
+      <width>44</width>
+      <heigth>25</heigth>
+    </notepad>
+    <notepad>
+      <note>Transformation</note>
+      <xloc>25</xloc>
+      <yloc>212</yloc>
+      <width>104</width>
+      <heigth>25</heigth>
+    </notepad>
+    <notepad>
+      <note>Output</note>
+      <xloc>27</xloc>
+      <yloc>302</yloc>
+      <width>54</width>
+      <heigth>25</heigth>
+    </notepad>
+    <notepad>
+      <note>LEFT_COLUMNS
+is_holiday
+is_selling_season</note>
+      <xloc>402</xloc>
+      <yloc>37</yloc>
+      <width>104</width>
+      <heigth>47</heigth>
+    </notepad>
+  </notepads>
+  <connection>
+    <name>CONN_SRC_SQLSRV</name>
+    <server>localhost</server>
+    <type>MSSQL</type>
+    <access>Native</access>
+    <database>dersgir</database>
+    <port>1433</port>
+    <username>sa</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce63dfc3fd89</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>CONN_TRG_DM</name>
+    <server>localhost</server>
+    <type>ORACLE</type>
+    <access>Native</access>
+    <database>XE</database>
+    <port>1521</port>
+    <username>dm</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce74d3c3fd89</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>CONN_TRG_ODS</name>
+    <server>localhost</server>
+    <type>ORACLE</type>
+    <access>Native</access>
+    <database>XE</database>
+    <port>1521</port>
+    <username>ODS</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79a174cdc3fd89</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>CONN_TRG_STG</name>
+    <server>localhost</server>
+    <type>ORACLE</type>
+    <access>Native</access>
+    <database>XE</database>
+    <port>1521</port>
+    <username>STG</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb799d44f9c3fd89</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>Select values</from><to>Load DIM_TIME_DAY</to><enabled>Y</enabled> </hop>  <hop> <from>Create DIM_TIME_DAY</from><to>Generate 5 years</to><enabled>Y</enabled> </hop>  <hop> <from>Day Sequence</from><to>Calculate Dimension Attributes</to><enabled>Y</enabled> </hop>  <hop> <from>Calculate Dimension Attributes</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Generate 5 years</from><to>Day Sequence</to><enabled>Y</enabled> </hop>  </order>
+  <step>
+    <name>Calculate Dimension Attributes</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>4</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>Y</compatible>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#47;&#47;Create a Locale according to the specified language code
+var locale = new java.util.Locale(
+    language_code.getString()
+,   country_code.getString()
+);
+
+&#47;&#47;get the local yes&#47;no values
+var yes = local_yes.getString();
+var no = local_no.getString();
+
+&#47;&#47;Create a calendar, use the specified initial date
+var calendar = new java.util.GregorianCalendar(locale);
+calendar.setTime(initial_date.getDate());
+
+&#47;&#47;set the calendar to the current date by adding DaySequence days
+calendar.add(calendar.DAY_OF_MONTH,DaySequence.getInteger() - 1);
+
+var simpleDateFormat   = java.text.SimpleDateFormat(&quot;D&quot;,locale);
+
+
+&#47;&#47;get the calendar date
+var day = new java.util.Date(calendar.getTimeInMillis());
+var day_timestamp = day
+
+ 
+
+
+
+&#47;&#47;initialize for week calculations
+var first_day_of_week = calendar.getFirstDayOfWeek();
+var day_of_week = java.util.Calendar.DAY_OF_WEEK;
+
+
+&#47;&#47;en-us example: &quot;Monday&quot;
+simpleDateFormat.applyPattern(&quot;EEEE&quot;);
+var day_name           = simpleDateFormat.format(day);
+
+&#47;&#47;en-us example: &quot;Mon&quot;
+simpleDateFormat.applyPattern(&quot;E&quot;);
+var day_abbreviation   = simpleDateFormat.format(day);
+
+
+&#47;&#47;en-us example: Sep 3, 2007 
+var day_medium = java.text.DateFormat.getDateInstance(
+                      java.text.DateFormat.MEDIUM
+                  ,   locale
+                  ).format(day);
+
+
+&#47;&#47;en-us example: September 3, 2007
+var day_long   = java.text.DateFormat.getDateInstance(
+                      java.text.DateFormat.LONG
+                  ,   locale
+                  ).format(day);
+
+
+&#47;&#47;en-us example: Monday, September 3, 2007
+var day_full   = java.text.DateFormat.getDateInstance(
+                      java.text.DateFormat.FULL
+                  ,   locale
+                  ).format(day);
+
+
+&#47;&#47;day_name_tr:&quot;Pazartesi&quot;, day_abbreviation_tr: &quot;Pzt&quot;
+var day_in_week;
+var day_name_tr;
+var day_abbreviation_tr;
+if(day_abbreviation==&apos;Sun&apos;){
+    day_in_week = 7
+	day_name_tr=&quot;Pazar&quot;
+	day_abbreviation_tr=&quot;Paz&quot;
+} else if(day_abbreviation==&apos;Mon&apos;){
+    day_in_week = 1
+	day_name_tr=&quot;Pazartesi&quot;
+	day_abbreviation_tr=&quot;Paz&quot;
+} else if(day_abbreviation==&apos;Tue&apos;){
+    day_in_week = 2
+	day_name_tr=&quot;Sali&quot;
+	day_abbreviation_tr=&quot;Sal&quot;
+} else if(day_abbreviation==&apos;Wed&apos;){
+    day_in_week = 3
+	day_name_tr=&quot;Carsamba&quot;
+	day_abbreviation_tr=&quot;Crs&quot;
+} else if(day_abbreviation==&apos;Thu&apos;){
+    day_in_week = 4
+	day_name_tr=&quot;Persembe&quot;
+	day_abbreviation_tr=&quot;Prs&quot;
+} else if(day_abbreviation==&apos;Fri&apos;){
+    day_in_week = 5
+	day_name_tr=&quot;Cuma&quot;
+	day_abbreviation_tr=&quot;Cum&quot;
+} else if(day_abbreviation==&apos;Sat&apos;){
+    day_in_week = 6
+	day_name_tr=&quot;Cumartesi&quot;
+	day_abbreviation_tr=&quot;Cmt&quot;
+}
+
+
+
+&#47;&#47;day in month: 1..31
+simpleDateFormat.applyPattern(&quot;d&quot;);
+var day_in_month       = simpleDateFormat.format(day);
+
+
+
+&#47;&#47;day in year: 1..366
+var simpleDateFormat   = java.text.SimpleDateFormat(&quot;D&quot;,locale);
+var day_in_year        = simpleDateFormat.format(day);
+
+
+&#47;&#47;week in month, 1..5
+simpleDateFormat.applyPattern(&quot;W&quot;);
+var week_in_month      = simpleDateFormat.format(day);
+
+
+&#47;&#47;week in year, 1..53
+simpleDateFormat.applyPattern(&quot;ww&quot;);
+var week_in_year       = simpleDateFormat.format(day);
+
+
+&#47;&#47;month number in year, 1..12
+simpleDateFormat.applyPattern(&quot;MM&quot;);
+var month_number       = simpleDateFormat.format(day);
+
+
+
+&#47;&#47;en-us example: &quot;September&quot;
+simpleDateFormat.applyPattern(&quot;MMMM&quot;);
+var month_name         = simpleDateFormat.format(day);
+
+
+&#47;&#47;en-us example: &quot;Sep&quot;
+simpleDateFormat.applyPattern(&quot;MMM&quot;);
+var month_abbreviation = simpleDateFormat.format(day);
+
+
+var month_name_tr;
+var month_abbreviation_tr;
+if(month_abbreviation==&apos;Jan&apos;){
+	month_name_tr = &quot;Ocak&quot;
+	month_abbreviation_tr = &quot;Ock&quot; 
+} else if(month_abbreviation==&apos;Feb&apos;){
+	month_name_tr = &quot;Subat&quot;;
+	month_abbreviation_tr = &quot;Sbt&quot;;
+} else if(month_abbreviation==&apos;Mar&apos;){
+	month_name_tr = &quot;Mart&quot;;
+	month_abbreviation_tr = &quot;Mar&quot;;
+} else if(month_abbreviation==&apos;Apr&apos;){
+	month_name_tr = &quot;Nisan&quot;;
+	month_abbreviation_tr = &quot;Nis&quot;;
+} else if(month_abbreviation==&apos;May&apos;){
+	month_name_tr = &quot;Mayis&quot;;
+	month_abbreviation_tr = &quot;May&quot;;
+} else if(month_abbreviation==&apos;Jun&apos;){
+	month_name_tr = &quot;Haziran&quot;;
+	month_abbreviation_tr = &quot;Haz&quot;;
+} else if(month_abbreviation==&apos;Jul&apos;){
+	month_name_tr = &quot;Temmuz&quot;;
+	month_abbreviation_tr = &quot;Tem&quot;;
+} else if(month_abbreviation==&apos;Aug&apos;){
+	month_name_tr = &quot;Agustos&quot;;
+	month_abbreviation_tr = &quot;Ags&quot;;
+} else if(month_abbreviation==&apos;Sep&apos;){
+	month_name_tr = &quot;Eylul&quot;;
+	month_abbreviation_tr = &quot;Eyl&quot;;
+} else if(month_abbreviation==&apos;Oct&apos;){
+	month_name_tr = &quot;Ekim&quot;;
+	month_abbreviation_tr = &quot;Ekm&quot;;
+} else if(month_abbreviation==&apos;Nov&apos;){
+	month_name_tr = &quot;Kasim&quot;;
+	month_abbreviation_tr = &quot;Kas&quot;;
+} else if(month_abbreviation==&apos;Dec&apos;){
+	month_name_tr = &quot;Aralik&quot;;
+	month_abbreviation_tr = &quot;Ara&quot;;
+}
+
+
+&#47;&#47;handling Quarters is a DIY
+var quarter_name = &quot;Q&quot;;
+var quarter_number;
+switch(parseInt(month_number)){
+    case 1: case 2: case 3: quarter_number = &quot;1&quot;; break;
+    case 4: case 5: case 6: quarter_number = &quot;2&quot;; break;
+    case 7: case 8: case 9: quarter_number = &quot;3&quot;; break;
+    case 10: case 11: case 12: quarter_number = &quot;4&quot;; break;
+}
+quarter_name += quarter_number;
+
+
+
+
+&#47;&#47;4 digit representation of the year, example:  2007
+simpleDateFormat.applyPattern(&quot;yyyy&quot;);
+var year_key = &quot;&quot; + simpleDateFormat.format(day);
+
+
+
+
+
+&#47;&#47;20052
+var quarter_key = year_key + &quot;&quot; + quarter_number; 
+
+&#47;&#47;2008-Jun
+var year_month_abbreviation = year_key + &quot;-&quot; + month_abbreviation;
+
+
+&#47;&#47;2008-Haz
+var year_month_abbreviation_tr = year_key + &quot;-&quot; + month_abbreviation_tr;
+
+&#47;&#47;find out if this is the first day of the month
+var is_first_day_in_month;
+if(day_in_month == 1){
+    is_first_day_in_month = 1;
+} else {
+    is_first_day_in_month = 0;
+}
+
+
+&#47;&#47;find out if this is the first day of the week
+var is_first_day_in_week;
+if(first_day_of_week==calendar.get(day_of_week)){
+    is_first_day_in_week = 1;
+} else {
+    is_first_day_in_week = 0;
+}
+
+
+&#47;&#47;find out if this is the first day of the week
+var is_last_day_in_week;
+if(first_day_of_week==calendar.get(day_of_week)){
+    is_last_day_in_week = 1;
+} else {
+    is_last_day_in_week = 0;
+}
+
+
+var is_weekend;
+if(day_abbreviation==&apos;Sun&apos;){
+    is_weekend = 1
+} else if(day_abbreviation==&apos;Sat&apos;){
+    is_weekend = 1
+} else {
+    is_weekend = 0
+}
+
+
+
+&#47;&#47; 8 Haz 2000
+var day_name_medium_tr;
+day_name_medium_tr = day_in_month + &quot; &quot; + month_abbreviation_tr + &quot; &quot; + year_key;
+
+
+&#47;&#47; 8 Haziran 2000
+var day_name_long_tr;
+day_name_long_tr = day_in_month +&quot; &quot; +  month_name_tr + &quot; &quot; +  year_key;
+
+
+&#47;&#47; 8 Haziran 2000, Persembe
+var day_name_full_tr;
+day_name_full_tr = day_in_month +&quot; &quot; +  month_name_tr + &quot; &quot; + year_key + &quot;, &quot; + day_name_tr;
+
+
+&#47;&#47;200712
+var week_key;
+week_key = year_key + week_in_year;
+
+
+
+&#47;&#47;200801
+var month_key;
+month_key = year_key + month_number;
+
+
+&#47;&#47;2009-01
+var year_month_number;
+year_month_number = year_key + &quot;-&quot; + month_number;
+
+var day_key;
+day_key = year_key + month_number + (day_in_month&lt;10?&quot;0&quot;:&quot;&quot;) + day_in_month;
+
+
+
+
+&#47;&#47;calculate the next day
+calendar.add(calendar.DAY_OF_MONTH,1);
+&#47;&#47;get the next calendar day
+var next_day = new java.util.Date(calendar.getTimeInMillis());
+
+&#47;&#47;find out if this is the last day in the month
+var is_last_day_in_month;
+if(java.text.SimpleDateFormat(&quot;d&quot;,locale).format(next_day)==1){
+    is_last_day_in_month = 1;
+} else {
+    is_last_day_in_month = 0;
+}
+
+
+&#47;&#47;&#47;&#47;
+var day_in_fiscalyear = dateDiff(fiscal_year_initial_date.getDate(),day,&quot;D&quot;);
+
+
+var month_in_fiscalyear = dateDiff(fiscal_year_initial_date.getDate(),day,&quot;M&quot;);
+
+
+var fiscalquarter_number;
+switch(parseInt(month_in_fiscalyear % 12)){
+    case 0: case 1: case 2: fiscalquarter_number = &quot;1&quot;; break;
+    case 3: case 4: case 5: fiscalquarter_number = &quot;2&quot;; break;
+    case 6: case 7: case 8: fiscalquarter_number = &quot;3&quot;; break;
+    case 9: case 10: case 11: fiscalquarter_number = &quot;4&quot;; break;
+}
+
+
+if(fiscalquarter_number&gt;quarter_number){
+	fiscalyear_key = str2num(year_key) - 1
+}
+else{
+fiscalyear_key = str2num(year_key)
+}
+
+
+var fiscalyear_text = fiscalyear_key;
+
+var fiscalquarter_key = fiscalyear_key + &quot;&quot; + fiscalquarter_number;
+
+</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>day_timestamp</name>
+        <rename>day_timestamp</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_name</name>
+        <rename>day_name</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_abbreviation</name>
+        <rename>day_abbreviation</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_medium</name>
+        <rename>day_medium</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_long</name>
+        <rename>day_long</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_full</name>
+        <rename>day_full</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_in_week</name>
+        <rename>day_in_week</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_name_tr</name>
+        <rename>day_name_tr</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_abbreviation_tr</name>
+        <rename>day_abbreviation_tr</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_in_month</name>
+        <rename>day_in_month</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_in_year</name>
+        <rename>day_in_year</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>week_in_month</name>
+        <rename>week_in_month</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>week_in_year</name>
+        <rename>week_in_year</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>month_number</name>
+        <rename>month_number</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>month_name</name>
+        <rename>month_name</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>month_abbreviation</name>
+        <rename>month_abbreviation</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>month_name_tr</name>
+        <rename>month_name_tr</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>month_abbreviation_tr</name>
+        <rename>month_abbreviation_tr</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>quarter_name</name>
+        <rename>quarter_name</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>quarter_number</name>
+        <rename>quarter_number</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>year_key</name>
+        <rename>year_key</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>quarter_key</name>
+        <rename>quarter_key</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>year_month_abbreviation</name>
+        <rename>year_month_abbreviation</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>year_month_abbreviation_tr</name>
+        <rename>year_month_abbreviation_tr</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>is_first_day_in_month</name>
+        <rename>is_first_day_in_month</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>is_first_day_in_week</name>
+        <rename>is_first_day_in_week</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>is_last_day_in_week</name>
+        <rename>is_last_day_in_week</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>is_weekend</name>
+        <rename>is_weekend</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_name_medium_tr</name>
+        <rename>day_name_medium_tr</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_name_long_tr</name>
+        <rename>day_name_long_tr</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_name_full_tr</name>
+        <rename>day_name_full_tr</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>week_key</name>
+        <rename>week_key</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>month_key</name>
+        <rename>month_key</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>year_month_number</name>
+        <rename>year_month_number</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_key</name>
+        <rename>day_key</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>is_last_day_in_month</name>
+        <rename>is_last_day_in_month</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>day_in_fiscalyear</name>
+        <rename>day_in_fiscalyear</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>month_in_fiscalyear</name>
+        <rename>month_in_fiscalyear</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>fiscalquarter_number</name>
+        <rename>fiscalquarter_number</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>fiscalyear_text</name>
+        <rename>fiscalyear_text</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>fiscalquarter_key</name>
+        <rename>fiscalquarter_key</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>327</xloc>
+      <yloc>216</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Create DIM_TIME_DAY</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>CONN_TRG_DM</connection>
+    <execute_each_row>N</execute_each_row>
+    <replace_variables>N</replace_variables>
+    <sql>CREATE TABLE dm.dim_time_day
+(
+  day_key                    INTEGER,
+  day_timestamp              DATE,
+  day_name                   VARCHAR2(9 CHAR),
+  day_abbreviation           VARCHAR2(3 CHAR),
+  day_medium                 VARCHAR2(12 CHAR),
+  day_long                   VARCHAR2(18 CHAR),
+  day_full                   VARCHAR2(30 CHAR),
+  day_name_tr                VARCHAR2(9 CHAR),
+  day_abbreviation_tr        VARCHAR2(3 CHAR),
+  day_name_medium_tr         VARCHAR2(12 CHAR),
+  day_name_long_tr           VARCHAR2(18 CHAR),
+  day_name_full_tr           VARCHAR2(30 CHAR),
+  day_in_week                INTEGER,
+  day_in_month               INTEGER,
+  day_in_year                INTEGER,
+  day_in_fiscalyear          INTEGER,
+  week_key                    INTEGER,
+  week_in_month               INTEGER,
+  week_in_year                INTEGER,
+  month_key                   INTEGER,
+  month_number                VARCHAR2(2 CHAR),
+  month_name                  VARCHAR2(9 CHAR),
+  month_abbreviation          VARCHAR2(3 CHAR),
+  month_in_fiscalyear         INTEGER,
+  month_name_tr               VARCHAR2(9 CHAR),
+  month_abbreviation_tr       VARCHAR2(3 CHAR),
+  quarter_key                 INTEGER,
+  quarter_name                VARCHAR2(2 CHAR),
+  quarter_number              INTEGER,
+  fiscalquarter_key           INTEGER,
+  fiscalquarter_number        INTEGER,
+  year_key                    INTEGER,
+  year_month_number           VARCHAR2(7 CHAR),
+  year_month_abbreviation     VARCHAR2(8 CHAR),
+  year_month_abbreviation_tr  VARCHAR2(8 CHAR),
+  fiscalyear_key              INTEGER,
+  fiscalyear_text             VARCHAR2(4 CHAR),
+  is_first_day_in_month       CHAR(1 CHAR),
+  is_first_day_in_week        CHAR(1 CHAR),
+  is_last_day_in_month        CHAR(1 CHAR),
+  is_last_day_in_week         CHAR(1 CHAR),
+  is_weekend                  CHAR(1 CHAR),
+  is_holiday                  CHAR(1 CHAR),
+  is_selling_season           CHAR(1 CHAR)
+)
+NOLOGGING
+NOCOMPRESS
+NOCACHE
+NOPARALLEL
+MONITORING;</sql>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>246</xloc>
+      <yloc>41</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Day Sequence</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <valuename>DaySequence</valuename>
+      <use_database>N</use_database>
+      <connection/>
+      <schema/>
+      <seqname>SEQ_</seqname>
+      <use_counter>Y</use_counter>
+      <counter_name/>
+      <start_at>1</start_at>
+      <increment_by>1</increment_by>
+      <max_value>9999999</max_value>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>181</xloc>
+      <yloc>216</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Generate 5 years</name>
+    <type>RowGenerator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>language_code</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>en</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>country_code</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>us</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>initial_date</name>
+        <type>Date</type>
+        <format>yyyy-MM-dd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>2006-01-01</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>local_yes</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>yes</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>local_no</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>no</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>fiscal_year_initial_date</name>
+        <type>Date</type>
+        <format>yyyy-MM-dd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>2005-04-01</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <limit>1900</limit>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>183</xloc>
+      <yloc>125</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Load DIM_TIME_DAY</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>CONN_TRG_DM</connection>
+    <schema>dm</schema>
+    <table>dim_time_day</table>
+    <commit>10000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>day_timestamp</column_name>
+          <stream_name>day_timestamp</stream_name>
+        </field>
+        <field>
+          <column_name>day_name</column_name>
+          <stream_name>day_name</stream_name>
+        </field>
+        <field>
+          <column_name>day_abbreviation</column_name>
+          <stream_name>day_abbreviation</stream_name>
+        </field>
+        <field>
+          <column_name>day_medium</column_name>
+          <stream_name>day_medium</stream_name>
+        </field>
+        <field>
+          <column_name>day_long</column_name>
+          <stream_name>day_long</stream_name>
+        </field>
+        <field>
+          <column_name>day_full</column_name>
+          <stream_name>day_full</stream_name>
+        </field>
+        <field>
+          <column_name>day_in_week</column_name>
+          <stream_name>day_in_week</stream_name>
+        </field>
+        <field>
+          <column_name>day_name_tr</column_name>
+          <stream_name>day_name_tr</stream_name>
+        </field>
+        <field>
+          <column_name>day_abbreviation_tr</column_name>
+          <stream_name>day_abbreviation_tr</stream_name>
+        </field>
+        <field>
+          <column_name>day_in_month</column_name>
+          <stream_name>day_in_month</stream_name>
+        </field>
+        <field>
+          <column_name>day_in_year</column_name>
+          <stream_name>day_in_year</stream_name>
+        </field>
+        <field>
+          <column_name>week_in_month</column_name>
+          <stream_name>week_in_month</stream_name>
+        </field>
+        <field>
+          <column_name>week_in_year</column_name>
+          <stream_name>week_in_year</stream_name>
+        </field>
+        <field>
+          <column_name>month_number</column_name>
+          <stream_name>month_number</stream_name>
+        </field>
+        <field>
+          <column_name>month_name</column_name>
+          <stream_name>month_name</stream_name>
+        </field>
+        <field>
+          <column_name>month_abbreviation</column_name>
+          <stream_name>month_abbreviation</stream_name>
+        </field>
+        <field>
+          <column_name>month_name_tr</column_name>
+          <stream_name>month_name_tr</stream_name>
+        </field>
+        <field>
+          <column_name>month_abbreviation_tr</column_name>
+          <stream_name>month_abbreviation_tr</stream_name>
+        </field>
+        <field>
+          <column_name>quarter_name</column_name>
+          <stream_name>quarter_name</stream_name>
+        </field>
+        <field>
+          <column_name>quarter_number</column_name>
+          <stream_name>quarter_number</stream_name>
+        </field>
+        <field>
+          <column_name>year_key</column_name>
+          <stream_name>year_key</stream_name>
+        </field>
+        <field>
+          <column_name>quarter_key</column_name>
+          <stream_name>quarter_key</stream_name>
+        </field>
+        <field>
+          <column_name>year_month_abbreviation</column_name>
+          <stream_name>year_month_abbreviation</stream_name>
+        </field>
+        <field>
+          <column_name>year_month_abbreviation_tr</column_name>
+          <stream_name>year_month_abbreviation_tr</stream_name>
+        </field>
+        <field>
+          <column_name>is_first_day_in_month</column_name>
+          <stream_name>is_first_day_in_month</stream_name>
+        </field>
+        <field>
+          <column_name>is_first_day_in_week</column_name>
+          <stream_name>is_first_day_in_week</stream_name>
+        </field>
+        <field>
+          <column_name>is_last_day_in_week</column_name>
+          <stream_name>is_last_day_in_week</stream_name>
+        </field>
+        <field>
+          <column_name>is_weekend</column_name>
+          <stream_name>is_weekend</stream_name>
+        </field>
+        <field>
+          <column_name>day_name_medium_tr</column_name>
+          <stream_name>day_name_medium_tr</stream_name>
+        </field>
+        <field>
+          <column_name>day_name_long_tr</column_name>
+          <stream_name>day_name_long_tr</stream_name>
+        </field>
+        <field>
+          <column_name>day_name_full_tr</column_name>
+          <stream_name>day_name_full_tr</stream_name>
+        </field>
+        <field>
+          <column_name>week_key</column_name>
+          <stream_name>week_key</stream_name>
+        </field>
+        <field>
+          <column_name>month_key</column_name>
+          <stream_name>month_key</stream_name>
+        </field>
+        <field>
+          <column_name>year_month_number</column_name>
+          <stream_name>year_month_number</stream_name>
+        </field>
+        <field>
+          <column_name>day_key</column_name>
+          <stream_name>day_key</stream_name>
+        </field>
+        <field>
+          <column_name>is_last_day_in_month</column_name>
+          <stream_name>is_last_day_in_month</stream_name>
+        </field>
+        <field>
+          <column_name>day_in_fiscalyear</column_name>
+          <stream_name>day_in_fiscalyear</stream_name>
+        </field>
+        <field>
+          <column_name>month_in_fiscalyear</column_name>
+          <stream_name>month_in_fiscalyear</stream_name>
+        </field>
+        <field>
+          <column_name>fiscalquarter_number</column_name>
+          <stream_name>fiscalquarter_number</stream_name>
+        </field>
+        <field>
+          <column_name>fiscalyear_text</column_name>
+          <stream_name>fiscalyear_text</stream_name>
+        </field>
+        <field>
+          <column_name>fiscalquarter_key</column_name>
+          <stream_name>fiscalquarter_key</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>184</xloc>
+      <yloc>301</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>day_timestamp</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_name</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_abbreviation</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_medium</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_long</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_full</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_in_week</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_name_tr</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_abbreviation_tr</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_in_month</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_in_year</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>week_in_month</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>week_in_year</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>month_number</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>month_name</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>month_abbreviation</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>month_name_tr</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>month_abbreviation_tr</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>quarter_name</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>quarter_number</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>year_key</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>quarter_key</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>year_month_abbreviation</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>year_month_abbreviation_tr</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>is_first_day_in_month</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>is_first_day_in_week</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>is_last_day_in_week</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>is_weekend</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_name_medium_tr</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_name_long_tr</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_name_full_tr</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>week_key</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>month_key</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>year_month_number</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_key</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>is_last_day_in_month</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day_in_fiscalyear</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>month_in_fiscalyear</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>fiscalquarter_number</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>fiscalyear_text</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>fiscalquarter_key</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>329</xloc>
+      <yloc>302</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+</transformation>
